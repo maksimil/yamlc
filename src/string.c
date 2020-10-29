@@ -1,4 +1,5 @@
 #include "yamlc.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -6,8 +7,13 @@ void yc_initialize_string(yc_string *string, char *data)
 {
     string->allocated = strlen(data) + 1;
     string->data = malloc(string->allocated);
+    if (string->data == NULL)
+    {
+        printf("Memory allocation failed");
+        return;
+    }
 
-    strcpy(string->data, data);
+    strcpy_s(string->data, string->allocated, data);
 }
 
 void yc_destroy_string(yc_string *string)
@@ -22,11 +28,14 @@ void yc_set_string(yc_string *string, char *data)
     {
         char *nptr = realloc(string->data, nsize);
         if (nptr == NULL)
+        {
+            printf("Memory allocation failed");
             return;
+        }
 
         string->allocated = nsize;
         string->data = nptr;
     }
 
-    strcpy(string->data, data);
+    strcpy_s(string->data, string->allocated, data);
 }
