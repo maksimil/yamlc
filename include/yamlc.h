@@ -8,7 +8,7 @@ typedef enum yc_type
     none,
     string,
     list,
-    object
+    map
 } yc_type;
 
 typedef struct yc_string
