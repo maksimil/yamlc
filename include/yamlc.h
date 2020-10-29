@@ -5,10 +5,10 @@
 
 typedef enum yc_type
 {
-    none,
-    string,
-    list,
-    map
+    none_type,
+    string_type,
+    list_type,
+    object_type
 } yc_type;
 
 typedef struct yc_string
@@ -58,7 +58,7 @@ yc_object *yc_push(yc_list *, char *);
 void yc_initialize_emitter(yc_emitter *);
 void yc_destroy_emitter(yc_emitter *);
 
-void yc_add_property(yc_emitter, char *);
+void yc_add_property(yc_emitter *, char *);
 
 void yc_set_object(yc_emitter *);
 void yc_set_value(yc_emitter *, char *);
