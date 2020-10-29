@@ -3,13 +3,16 @@
 
 void yc_initialize_emitter(yc_emitter *emitter)
 {
-    yc_initialize_object(&emitter->root, "");
-    emitter->current = &emitter->root;
+    emitter->root = malloc(sizeof(yc_object));
+    yc_initialize_object(emitter->root, "");
+
+    emitter->current = emitter->root;
 }
 
 void yc_destroy_emitter(yc_emitter *emitter)
 {
-    yc_destroy_object(&emitter->root);
+    yc_destroy_object(emitter->root);
+    free(emitter->root);
 }
 
 void yc_close(yc_emitter *emitter)

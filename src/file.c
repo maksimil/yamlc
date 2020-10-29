@@ -39,5 +39,5 @@ void yc_write_child(yc_object *object, FILE *file, uint8_t indent)
 
 void yc_write_file(yc_emitter *emitter, FILE *file)
 {
-    yc_write_child(&emitter->root, file, 0);
+    yc_write_child(emitter->root, file, 0);
 }

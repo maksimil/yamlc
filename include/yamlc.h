@@ -37,7 +37,7 @@ typedef struct yc_list
 
 typedef struct yc_emitter
 {
-    yc_object root;
+    yc_object *root;
     yc_object *current;
 } yc_emitter;
 
