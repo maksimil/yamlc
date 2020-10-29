@@ -2,6 +2,7 @@
 #define __H_YAML_C
 
 #include <stdint.h>
+#include <stdio.h>
 
 typedef enum yc_type
 {
@@ -66,6 +67,6 @@ void yc_set_value(yc_emitter *, char *);
 void yc_close(yc_emitter *);
 
 // file functions
-void yc_read_file(yc_object *, char *);
-void yc_write_file(yc_object *, char *);
+void yc_write_file(yc_emitter *, FILE *);
+void yc_read_file(yc_object *, FILE *);
 #endif
