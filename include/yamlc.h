@@ -52,7 +52,7 @@ void yc_destroy_object(yc_object *);
 // list functions
 void yc_initialize_list(yc_list *, size_t);
 void yc_destroy_list(yc_list *);
-yc_object *yc_push(yc_list *);
+yc_object *yc_push(yc_list *, char *);
 
 // emitter functions
 void yc_initialize_emitter(yc_emitter *);
