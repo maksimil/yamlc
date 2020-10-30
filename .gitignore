@@ -5,6 +5,10 @@
 **.vcxproj.filters
 **.vcxproj.user
 
+# Makefile
+Makefile
+.make
+
 # Build
 bin/
 bin-int/

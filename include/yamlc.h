@@ -47,7 +47,7 @@ void yc_set_string(yc_string *, char *);
 void yc_destroy_string(yc_string *);
 
 // object functions
-void yc_initialize_object(yc_object *, char *name);
+void yc_initialize_object(yc_object *, char *);
 void yc_destroy_object(yc_object *);
 
 // list functions

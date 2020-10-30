@@ -1,5 +1,7 @@
 #include "yamlc.h"
+#include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 void yc_indent_file(FILE *file, uint8_t amount)
